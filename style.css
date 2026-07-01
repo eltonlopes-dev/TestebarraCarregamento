@@ -60,10 +60,9 @@ h2 {
     color: #00b37e;
 }
 
+/* Oculta o relógio principal da tela */
 .clock-text {
-    font-size: 1.1rem;
-    color: #a8a8b3;
-    font-family: monospace; /* Mantém os números alinhados */
+    display: none;
 }
 
 /* Tela Grande de "Hora de Tchau" */
@@ -102,18 +101,28 @@ h2 {
     margin-bottom: 20px;
 }
 
+/* Oculta o relógio da tela de tchau */
 .overlay-clock {
-    font-size: 2.5rem;
-    font-weight: bold;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 10px 25px;
-    border-radius: 8px;
-    color: #ffffff;
-    font-family: monospace;
+    display: none;
 }
 
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
+}
+
+/* Animação para os pontos piscarem */
+.pontinhos-piscando {
+    display: inline-block;
+    animation: efeitoPiscar 1.4s infinite ease-in-out;
+}
+
+@keyframes efeitoPiscar {
+    0%, 100% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 1;
+    }
 }
