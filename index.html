@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Careegamento....</title>
+    <title>Contador de Jornada com Relógio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
-        <h2 id="tituloJornada">Carregando</h2>
+        <h2>Carregando........</h2>
         <div class="progress-bar-container">
             <div id="myProgressBar" class="progress-bar"></div>
         </div>
-        <div id="statusLabel" class="status-text">0%</div>
+        <div class="status-container">
+            <div id="statusLabel" class="status-text">0%</div>
+            <div id="digitalClock" class="clock-text">00:00:00</div>
+        </div>
     </div>
 
     <div id="tchauScreen" class="overlay-tchau">
         <h1>Hora de Tchau! 👋</h1>
-        <p>Quem fez, fez....</p>
+        <p>Quem fez, fez.</p>
+        <div id="overlayClock" class="overlay-clock">18:00:00</div>
     </div>
 
     <script src="script.js"></script>
