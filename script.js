@@ -26,7 +26,7 @@ function atualizarProgresso() {
         porcentagem = 100;
     } else {
         porcentagem = (tempoDecorrido / tempoTotal) * 100;
-        titulo.textContent = "Jornada de Trabalho em Andamento";
+        titulo.textContent = "Carregamento........";
     }
 
     // Arredonda para duas casas decimais
