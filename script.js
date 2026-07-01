@@ -5,11 +5,10 @@ function atualizarProgressoERelogio() {
     const horas = String(agora.getHours()).padStart(2, '0');
     const minutos = String(agora.getMinutes()).padStart(2, '0');
     const segundos = String(agora.getSeconds()).padStart(2, '0');
-    const horarioFormatado = `${horas}:${minutos}:${segundos}`;
+   
 
     // Atualiza os relógios na tela
-    document.getElementById('digitalClock').textContent = horarioFormatado;
-    document.getElementById('overlayClock').textContent = horarioFormatado;
+   
     
     // Configuração dos limites do turno
     const inicioTurno = new Date();
