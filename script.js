@@ -1,42 +1,48 @@
-function atualizarProgresso() {
+function atualizarProgressoERelogio() {
     const agora = new Date();
     
-    // Define os pontos de partida e chegada para o dia atual
+    // Pega horas, minutos e segundos atuais formatados com zero à esquerda
+    const horas = String(agora.getHours()).padStart(2, '0');
+    const minutos = String(agora.getMinutes()).padStart(2, '0');
+    const segundos = String(agora.getSeconds()).padStart(2, '0');
+    const horarioFormatado = `${horas}:${minutos}:${segundos}`;
+
+    // Atualiza os relógios na tela
+    document.getElementById('digitalClock').textContent = horarioFormatado;
+    document.getElementById('overlayClock').textContent = horarioFormatado;
+    
+    // Configuração dos limites do turno
     const inicioTurno = new Date();
-    inicioTurno.setHours(8, 0, 0, 0); // 08:00:00
+    inicioTurno.setHours(8, 0, 0, 0); 
 
     const fimTurno = new Date();
-    fimTurno.setHours(18, 0, 0, 0); // 18:00:00
+    fimTurno.setHours(18, 0, 0, 0); 
 
     const tempoTotal = fimTurno - inicioTurno;
     const tempoDecorrido = agora - inicioTurno;
 
     let porcentagem = 0;
 
-    // Elementos da DOM
-    const barra = document.getElementById('myProgressBar');
-    const label = document.getElementById('statusLabel');
-    const telaTchau = document.getElementById('tchauScreen');
-    const titulo = document.getElementById('tituloJornada');
-
     if (agora < inicioTurno) {
         porcentagem = 0;
-        titulo.textContent = "Iniciando... ☕";
     } else if (agora >= fimTurno) {
         porcentagem = 100;
     } else {
         porcentagem = (tempoDecorrido / tempoTotal) * 100;
-        titulo.textContent = "Carregamento........";
     }
 
-    // Arredonda para duas casas decimais
     const porcentagemFormatada = porcentagem.toFixed(2);
 
-    // Atualiza a interface gráfica
+    // Elementos da DOM
+    const barra = document.getElementById('myProgressBar');
+    const label = document.getElementById('statusLabel');
+    const telaTchau = document.getElementById('tchauScreen');
+
+    // Atualiza a barra de progresso
     barra.style.width = `${porcentagemFormatada}%`;
     label.textContent = `${porcentagemFormatada}%`;
 
-    // Gatilho para abrir a tela grande se chegar a 100%
+    // Validação para abrir a tela de tchau
     if (porcentagem >= 100) {
         telaTchau.classList.add('active');
     } else {
@@ -44,8 +50,6 @@ function atualizarProgresso() {
     }
 }
 
-// Executa a função imediatamente ao carregar a página
-atualizarProgresso();
-
-// Atualiza a cada 1 segundo (1000 milissegundos)
-setInterval(atualizarProgresso, 1000);
+// Executa imediatamente e define o intervalo para rodar a cada segundo
+atualizarProgressoERelogio();
+setInterval(atualizarProgressoERelogio, 1000);
