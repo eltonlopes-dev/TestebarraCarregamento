@@ -7,7 +7,7 @@ function atualizarProgressoERelogio() {
     const segundos = String(agora.getSeconds()).padStart(2, '0');
     const horarioFormatado = `${horas}:${minutos}:${segundos}`;
 
-    // Atualiza os relógios na tela
+    // Atualiza os relógios na tela (continuam a atualizar na DOM, mas ocultos visualmente)
     document.getElementById('digitalClock').textContent = horarioFormatado;
     document.getElementById('overlayClock').textContent = horarioFormatado;
     
