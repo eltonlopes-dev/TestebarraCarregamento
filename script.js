@@ -21,7 +21,7 @@ function atualizarProgresso() {
 
     if (agora < inicioTurno) {
         porcentagem = 0;
-        titulo.textContent = "O turno ainda não começou ☕";
+        titulo.textContent = "Iniciando... ☕";
     } else if (agora >= fimTurno) {
         porcentagem = 100;
     } else {
