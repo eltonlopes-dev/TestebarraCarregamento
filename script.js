@@ -16,7 +16,7 @@ function atualizarProgressoERelogio() {
     inicioTurno.setHours(8, 0, 0, 0); 
 
     const fimTurno = new Date();
-    fimTurno.setHours(18, 0, 0, 0); 
+    fimTurno.setHours(17, 0, 0, 0); 
 
     const tempoTotal = fimTurno - inicioTurno;
     const tempoDecorrido = agora - inicioTurno;
