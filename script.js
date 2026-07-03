@@ -13,7 +13,7 @@ function atualizarProgressoERelogio() {
     
     // Configuração dos limites do turno
     const inicioTurno = new Date();
-    inicioTurno.setHours(8, 0, 0, 0); 
+    inicioTurno.setHours(7, 0, 0, 0); 
 
     const fimTurno = new Date();
     fimTurno.setHours(17, 0, 0, 0); 
